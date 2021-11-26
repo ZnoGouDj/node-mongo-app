@@ -17,9 +17,9 @@ app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(todoRoutes);
-app.use(express.static(path.join(__dirname, 'public')));
 
 async function start() {
   try {
